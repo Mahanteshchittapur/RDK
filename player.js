@@ -1,47 +1,93 @@
 
 
  // Get references to the video element and the play button
- const videoPlayer = document.getElementById("videoPlayer");
- const playButton = document.getElementById("playButton");
 const url = "https://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
- // Initialize the Dash player
- const player = new AAMPMediaPlayer();
+const player = new AAMPMediaPlayer();
  player.load(url);
- // player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
+ const videoPlayer = document.getElementById("videoPlayer");
+ const playPauseButton = document.getElementById("playButton");
+ const progressBar = document.getElementById('progress-bar');
 
- // Add event listener to the play button
- playButton.addEventListener("click", () => {
-     // Request full-screen mode for the video element
-     if (videoPlayer.requestFullscreen) {
-         videoPlayer.requestFullscreen().then(() => {
-             // Play the video when full-screen mode is granted
-             videoPlayer.play();
-         }).catch((error) => {
-             console.log('Error attempting to enable full-screen mode:', error.message);
-         });
-     } else if (videoPlayer.mozRequestFullScreen) {
-         videoPlayer.mozRequestFullScreen().then(() => {
-             // Play the video when full-screen mode is granted
-             videoPlayer.play();
-         }).catch((error) => {
-             console.log('Error attempting to enable full-screen mode:', error.message);
-         });
-     } else if (videoPlayer.webkitRequestFullscreen) {
-         videoPlayer.webkitRequestFullscreen().then(() => {
-             // Play the video when full-screen mode is granted
-             videoPlayer.play();
-         }).catch((error) => {
-             console.log('Error attempting to enable full-screen mode:', error.message);
-         });
-     } else if (videoPlayer.msRequestFullscreen) {
-         videoPlayer.msRequestFullscreen().then(() => {
-             // Play the video when full-screen mode is granted
-             videoPlayer.play();
-         }).catch((error) => {
-             console.log('Error attempting to enable full-screen mode:', error.message);
-         });
-     }
- });
+ // Initialize the Dash player
+ 
+
+ // player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
+//// vishwas Code 
+playPauseButton.addEventListener('click', function() {
+  togglePlayPause();
+});
+
+ 
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {togglePlayPause();}
+
+ 
+
+});
+
+ 
+
+videoPlayer.addEventListener('timeupdate', function() {
+  var progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+  progressBar.style.width = progress + '%';
+});
+
+ 
+
+video.addEventListener('ended', function() {
+  playPauseButton.textContent = 'Play';
+  progressBar.style.width = '0';
+});
+
+ 
+
+function togglePlayPause() {
+  if (videoPlayer.paused || videoPlayer.ended) {
+    videoPlayer.play();
+    playPauseButton.textContent = 'Pause';
+  } else {
+    videoPlayer.pause();
+    playPauseButton.textContent = 'Play';
+  }
+}
+
+// vishwas coide ended
+
+
+ // // Add event listener to the play button
+ // playButton.addEventListener("click", () => {
+ //     // Request full-screen mode for the video element
+ //     if (videoPlayer.requestFullscreen) {
+ //         videoPlayer.requestFullscreen().then(() => {
+ //             // Play the video when full-screen mode is granted
+ //             videoPlayer.play();
+ //         }).catch((error) => {
+ //             console.log('Error attempting to enable full-screen mode:', error.message);
+ //         });
+ //     } else if (videoPlayer.mozRequestFullScreen) {
+ //         videoPlayer.mozRequestFullScreen().then(() => {
+ //             // Play the video when full-screen mode is granted
+ //             videoPlayer.play();
+ //         }).catch((error) => {
+ //             console.log('Error attempting to enable full-screen mode:', error.message);
+ //         });
+ //     } else if (videoPlayer.webkitRequestFullscreen) {
+ //         videoPlayer.webkitRequestFullscreen().then(() => {
+ //             // Play the video when full-screen mode is granted
+ //             videoPlayer.play();
+ //         }).catch((error) => {
+ //             console.log('Error attempting to enable full-screen mode:', error.message);
+ //         });
+ //     } else if (videoPlayer.msRequestFullscreen) {
+ //         videoPlayer.msRequestFullscreen().then(() => {
+ //             // Play the video when full-screen mode is granted
+ //             videoPlayer.play();
+ //         }).catch((error) => {
+ //             console.log('Error attempting to enable full-screen mode:', error.message);
+ //         });
+ //     }
+ // });
 
  // const videoPlayer1 = document.getElementById("videoPlayer1");
  // const playButton1= document.getElementById("playButton1");
