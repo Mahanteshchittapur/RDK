@@ -7,7 +7,7 @@ const url = "https://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voic
  // Initialize the Dash player
  const player = new AAMPMediaPlayer();
  player.load(url);
- player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
+ // player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
 
  // Add event listener to the play button
  playButton.addEventListener("click", () => {
