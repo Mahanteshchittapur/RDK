@@ -8,19 +8,22 @@ const player = new AAMPMediaPlayer();
  const playPauseButton = document.getElementById("playButton");
  const progressBar = document.getElementById('progress-bar');
 
- // Initialize the Dash player
+ 
  
 
  // player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
 //// vishwas Code 
 playPauseButton.addEventListener('click', function() {
   togglePlayPause();
+  console.log(togglePlayPause(), 'button is clicked');
 });
 
  
 
 document.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {togglePlayPause();}
+  if (event.key === 'Enter') {togglePlayPause();
+                               console.log(togglePlayPause(), 'button is Hitted');
+                             }
 
  
 
