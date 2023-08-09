@@ -16,7 +16,7 @@ const player = new AAMPMediaPlayer();
 playPauseButton.addEventListener('click', function() {
    console.log('button is xyz');
   togglePlayPause();
-  console.log(togglePlayPause(), 'button is clicked');
+  console.log('button is clicked');
 });
 
  
