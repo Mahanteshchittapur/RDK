@@ -14,7 +14,7 @@ const player = new AAMPMediaPlayer();
  // player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
 //// vishwas Code 
 playPauseButton.addEventListener('click', function() {
-   console.log(togglePlayPause(), 'button is xyz');
+   console.log('button is xyz');
   togglePlayPause();
   console.log(togglePlayPause(), 'button is clicked');
 });
