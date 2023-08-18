@@ -10,7 +10,7 @@ function loadAAMPVideo() {
    var video = document.getElementById("videoPlayer");  
    video.src = url;
     video.style.display = "block";
-  video.style.objectFit="cover";
+  // video.style.objectFit="cover";
      video.play();
  }
 
