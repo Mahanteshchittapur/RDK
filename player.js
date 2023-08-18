@@ -8,7 +8,7 @@ var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices
 function loadAAMPVideo() {
  window.onload = function() {
     player = new AAMPMediaPlayer();
-   var video = document.getElementById("video");  
+   var video = document.getElementById("videoPlayer");  
    video.src = url;
     video.style.display = "block";
   video.style.objectFit="cover";
