@@ -1,30 +1,49 @@
-var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
- var player;
+var url = "https://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
+var player;
 
 window.onload = function() {
     player = new AAMPMediaPlayer();
- }
+    var playButton = document.getElementById("playButton");
 
-function loadAAMPVideo() {
+    playButton.addEventListener("click", function() {
+        loadAAMPVideo();
+    });
 
-   var video = document.getElementById("videoPlayer");  
-   video.src = url;
-    video.style.display = "block";
-  // video.style.objectFit="cover";
-     video.play();
- }
-
+    function loadAAMPVideo() {
+        var video = document.getElementById("videoPlayer");
+        video.src = url;
+        video.style.display = "block";
+        video.play();
+    }
 }
 
- var playButton = document.getElementById("playButton");
+// var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
+//  var player;
+
+// window.onload = function() {
+//     player = new AAMPMediaPlayer();
+//  }
+
+// function loadAAMPVideo() {
+
+//    var video = document.getElementById("videoPlayer");  
+//    video.src = url;
+//     video.style.display = "block";
+//   // video.style.objectFit="cover";
+//      video.play();
+//  }
+
+// }
+
+//  var playButton = document.getElementById("playButton");
 
 
 
- playButton.addEventListener("keydown", function(event) {
-    if (event.keyCode === 13) { // Enter key
-        loadAAMPVideo();
-    }
-});
+//  playButton.addEventListener("keydown", function(event) {
+//     if (event.keyCode === 13) { // Enter key
+//         loadAAMPVideo();
+//     }
+// });
 
 
  // Get references to the video element and the play button
