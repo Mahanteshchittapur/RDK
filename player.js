@@ -3,11 +3,8 @@ var player;
 
 window.onload = function() {
     player = new AAMPMediaPlayer();
-    var playButton = document.getElementById("playButton");
-
-    playButton.addEventListener("click", function() {
-        loadAAMPVideo();
-    });
+}
+    
 
     function loadAAMPVideo() {
         var video = document.getElementById("videoPlayer");
@@ -15,7 +12,13 @@ window.onload = function() {
         video.style.display = "block";
         video.play();
     }
-}
+var playButton = document.getElementById("playButton");
+
+playButton.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) { // Enter key
+        loadAAMPVideo();
+    }
+});
 
 // var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
 //  var player;
