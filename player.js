@@ -7,12 +7,12 @@ var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices
     
 
     function loadAAMPVideo() {
-        window.onload = function() {
+        //window.onload = function() {
         var video = document.getElementById("Video");
         video.src = url;
         // video.style.display = "block";
         video.play();
-    }
+    
     }
 var playBtn = document.getElementById("playButton");
 
