@@ -14,9 +14,9 @@ var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices
         video.play();
     }
     }
-var playButton = document.getElementById("playButton");
+var playBtn = document.getElementById("playButton");
 
-playButton.addEventListener("keydown", function(event) {
+playBtn.addEventListener("keydown", function(event) {
     if (event.keyCode === 13) { // Enter key
         loadAAMPVideo();
     }
